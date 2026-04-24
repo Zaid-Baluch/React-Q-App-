@@ -6,6 +6,8 @@ import useAuthStore from './store/authStore'
 import LoadingSpinner from './components/LoadingSpinner'
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
+import CompanyDashboard from './pages/CompanyDashboard'
+import UserTokenPage from './pages/UserTokenPage'
 
 // Protected route wrapper — redirects to login if not authenticated
 const ProtectedRoute = ({ children }) => {
@@ -57,14 +59,12 @@ const App = () => {
           }
         />
 
-        {/* Placeholder routes for company and user flows */}
+        {/* Protected: Company Dashboard */}
         <Route
           path="/company"
           element={
             <ProtectedRoute>
-              <div className="min-h-screen flex items-center justify-center text-gray-500">
-                Company Dashboard — coming soon
-              </div>
+              <CompanyDashboard />
             </ProtectedRoute>
           }
         />
@@ -72,9 +72,7 @@ const App = () => {
           path="/user"
           element={
             <ProtectedRoute>
-              <div className="min-h-screen flex items-center justify-center text-gray-500">
-                User Token Search — coming soon
-              </div>
+              <UserTokenPage />
             </ProtectedRoute>
           }
         />

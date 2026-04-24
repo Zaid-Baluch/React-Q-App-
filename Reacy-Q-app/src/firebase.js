@@ -1,6 +1,6 @@
 // Firebase configuration and service initialization
 import { initializeApp } from 'firebase/app'
-import { getAuth, FacebookAuthProvider } from 'firebase/auth'
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
@@ -19,7 +19,7 @@ const app = initializeApp(firebaseConfig)
 
 // Auth instance with Facebook provider
 export const auth = getAuth(app)
-export const facebookProvider = new FacebookAuthProvider()
+export const googleProvider = new GoogleAuthProvider()
 
 // Firestore database instance
 export const db = getFirestore(app)
